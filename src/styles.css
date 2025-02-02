@@ -25,7 +25,7 @@ a{
 }
 
 a:hover{
-    color: white;
+    color: #F89820;
 }
 
 /*FORM*/
@@ -54,9 +54,21 @@ form{
     font-size: .8em;
 }
 
+input{
+    background-color: #01080E;
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.301);
+    border-radius: 4px;
+
+}
+input:focus{
+    outline: none;
+    box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.301);
+}
+
 input[type="submit"], .register{
-    background-color: #fff;
-    border: 2px solid transparent;
+    background-color: #01080E;
+    border: 1px solid #fff;
     padding: .6em 1em;
     font-weight: bold;
     font-size: 1.1em;
@@ -148,7 +160,7 @@ a fa-icon{
 
 .course:hover {
     box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.301);
-  }
+}
 
 .course-img{
     width: 100%;

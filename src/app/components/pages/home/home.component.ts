@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../../models/Course';
-import { CourseService } from '../../services/course.service';
-import { environment } from '../../../environments/environment';
+import { Course } from '../../../models/Course';
+import { CourseService } from '../../../services/course.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -20,8 +20,8 @@ export class HomeComponent {
       (items) => {
         if(Array.isArray(items)){
           items.forEach((item) => {
-            if(item.release_date){
-              item.release_date = new Date(item.release_date). toLocaleDateString('pt-BR');
+            if(item.dt_lcmt){
+              item.dt_lcmt = new Date(item.dt_lcmt). toLocaleDateString('pt-BR');
             }
           });
           this.courses = items;
