@@ -1,0 +1,43 @@
+.home-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-container h1{
+    margin-bottom: .5em;
+}
+
+
+a{
+    color: #F89820;
+  
+}
+
+a:hover{
+  color: #F89820;
+
+}
+
+.search-container{
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.search-container form{
+    width: 30%;
+    position: relative;
+}
+
+.search-container fa-icon{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.search-container input{
+    padding: .5em;
+    width: 100%;
+    text-align: center;
+}
