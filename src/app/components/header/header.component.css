@@ -17,14 +17,6 @@ nav{
     margin-right: .6em;
 }
 
-.brand h2{
-    transition: .4s;
-}
-
-.brand:hover > h2{
-    color: #01080E;
-}
-
 .links li{
     margin-right: 1em;
     list-style: none;
