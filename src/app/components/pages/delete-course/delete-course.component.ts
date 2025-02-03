@@ -1,15 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../../services/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../../../models/Course';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-course',
-  templateUrl: './course.component.html',
-  styleUrl: './course.component.css'
+  selector: 'app-delete-course',
+  templateUrl: './delete-course.component.html',
+  styleUrl: './delete-course.component.css'
 })
-export class CourseComponent implements OnInit{
+export class DeleteCourseComponent implements OnInit{
   course: Course = {
     "id": 0,
     "ttl": "",
@@ -22,18 +22,18 @@ export class CourseComponent implements OnInit{
     "ntc": true,
     "emp": "",
   }
-  constructor(
-    private http:HttpClient,
+  constructor( 
+    private http: HttpClient,
     private service: CourseService,
-    private route: ActivatedRoute,
     private router: Router,
+    private route: ActivatedRoute,
   ){ }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.service.getCourseById(parseInt(id!)).subscribe((course)=>{
-      this.course = course;
-    })
+      const id = this.route.snapshot.paramMap.get("id");
+      this.service.getCourseById(parseInt(id!)).subscribe((course)=>{
+        this.course = course;
+      })
   }
 
   deleteCourse(){
@@ -42,5 +42,9 @@ export class CourseComponent implements OnInit{
         this.router.navigate(['/cursos']);
       })
     }
+  }
+
+  cancel(){
+    this.router.navigate(['/cursos']);
   }
 }

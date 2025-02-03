@@ -6,7 +6,13 @@
             </div>
         </a>
         <h3>{{ course.ttl }}</h3> 
-        <p>{{ course.cghr }} horas</p>
+        <p>Carga horária: {{ course.cghr }} horas</p>
         <p>{{ course.emp }}</p>
+        <a [routerLink]="['/cursos/editar', course.id]"><p>Editar</p></a>
+        <button class="btn btn-dark m-4" (click)="deleteCourse()">Excluir</button>
+        <!-- <a [routerLink]="['/cursos/excluir', course.id]"><p>Excluir</p></a> -->
+    </div>
+    <div class="container">
+        {{course.dett}}
     </div>
 </div>

@@ -1,0 +1,23 @@
+<form class="d-flex flex-column">
+    <label for="">Titulo</label>
+    <input type="text" name="ttl" id="ttl" [(ngModel)]="course.ttl">
+    <label for="">Data de lançamento</label>
+    <input type="date" name="dt_lcmt" id="dt_lcmt" [(ngModel)]="course.dt_lcmt">
+    <label for="">Detalhes</label>
+    <input type="textarea" name="dett" id="dett" [(ngModel)]="course.dett">
+    <label for="">Carga Horária</label>
+    <input type="number" name="cghr" id="cghr" [(ngModel)]="course.cghr">
+    <label for="">Url da Imagem</label>
+    <input type="text" name="img" id="img" [(ngModel)]="course.img">
+    <label for="">Url do Curso</label>
+    <input type="text" name="url" id="url" [(ngModel)]="course.url">
+    <label for="">Empresa</label>
+    <input type="text" name="emp" id="emp" [(ngModel)]="course.emp">
+    <label for="">Tipo do Curso</label>
+    <input type="text" name="tip" id="tip" [(ngModel)]="course.tip">
+    <label for="">Notícia</label>
+    <input type="text" name="ntc" id="ntc" [(ngModel)]="course.ntc">
+    <button class="btn btn-dark" (click)="updateCourse()">Salvar</button>
+    <button class="btn btn-dark" (click)="cancel()">Cancelar</button>
+
+</form>

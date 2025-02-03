@@ -25,4 +25,12 @@ export class CourseService {
   createCourse(course: Course):Observable<Course>{
     return this.http.post<Course>(this.baseApiUrl, course);
   }
+
+  updateCourse(course: Course):Observable<Response<Course>> {
+    return this.http.put<Response<Course>>(`${this.baseApiUrl}/${course.id}`, course);
+  }
+
+  deleteCourse(id:number):Observable<Course>{
+    return this.http.delete<Course>(`${this.baseApiUrl}/${id}`)
+  }
 }
