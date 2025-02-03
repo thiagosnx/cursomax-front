@@ -11,6 +11,30 @@
             "tip": 1,
             "ntc": 1,
             "emp": "esenceweb"
+        },
+        {
+            "id":2,
+            "ttl": "Java",
+            "dt_lcmt": "2025-03-02",
+            "dett": "curso java no bb",
+            "cghr": 50,
+            "img": "https://midias.inforchannel.com.br/wp-content/uploads/2021/03/e2d2f80e-java-logo-1-1024x573.png",
+            "url": "https://inforchannel.com.br/2023/03/21/oracle-lanca-java-20-com-varias-melhorias-de-desempenho-e-seguranca/",
+            "tip": 2,
+            "ntc": 1,
+            "emp": "oracle"
+        },
+        {
+            "id":3,
+            "ttl": "PHP",
+            "dt_lcmt": "2025-03-02",
+            "dett": "curso php no bb",
+            "cghr": 30,
+            "img": "https://www.php.net/images/php8/logo_php8_4.svg",
+            "url": "https://www.php.net/",
+            "tip": 2,
+            "ntc": 0,
+            "emp": "php"
         }
     ]
 }

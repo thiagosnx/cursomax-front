@@ -26,6 +26,7 @@
             <h3>{{ course.ttl }}</h3> 
             <p>{{ course.cghr }} horas</p>
             <p>{{ course.emp }}</p>
+            <a [routerLink]="['/curso', course.id]"><p>Detalhes</p></a>
         </div>
     </div>
 </div>

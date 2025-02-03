@@ -14,7 +14,7 @@
         <p class="date">Data de Lançamento: {{course.dt_lcmt}}</p>
         <p>Duração: {{ course.cghr }} horas</p>
         <p>{{ course.dett }}</p>
-        <p><a href="{{course.url}}" target="_blank">Acessar</a></p>
-        <!-- <p><a target="_blank" routerLink="/course/{{course.id}}">Admin</a></p> -->
+        <p><a href="{{course.url}}" target="_blank">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+        <a [routerLink]="['/curso', course.id]"><p>Detalhes</p></a>
     </div>
 </div>

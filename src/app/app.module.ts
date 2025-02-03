@@ -9,6 +9,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CoursesComponent } from './components/pages/courses/courses.component';
+import { CourseComponent } from './components/pages/course/course.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CoursesComponent } from './components/pages/courses/courses.component';
     HeaderComponent,
     FooterComponent,
     CoursesComponent,
+    CourseComponent,
   ],
   imports: [
     CarouselModule.forRoot(),
