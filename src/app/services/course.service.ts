@@ -15,6 +15,14 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   getCourses():Observable<Response<Course[]>>{
-    return this.http.get<Response<Course[]>>(this.apiUrl);
+    return this.http.get<Response<Course[]>>(this.baseApiUrl);
+  }
+
+  getCourseById(id:number):Observable<Course>{
+    return this.http.get<Course>(`${this.baseApiUrl}/${id}`);
+  }
+
+  createCourse(course: Course):Observable<Course>{
+    return this.http.post<Course>(this.baseApiUrl, course);
   }
 }
