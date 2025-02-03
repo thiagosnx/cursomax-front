@@ -1,0 +1,16 @@
+{
+    "cursos":[
+        {
+            "id":1,
+            "ttl": "Angular",
+            "dt_lcmt": "2025-03-02",
+            "dett": "curso angular no bb",
+            "cghr": 40,
+            "img": "https://www.esenceweb.com/backend/uploads/angular-framework-tutorial-for-absolute-beginners.png",
+            "url": "https://www.esenceweb.com/blog/angular-framework-tutorial-for-absolute-beginners",
+            "tip": 1,
+            "ntc": 1,
+            "emp": "esenceweb"
+        }
+    ]
+}

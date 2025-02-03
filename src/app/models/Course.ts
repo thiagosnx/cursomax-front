@@ -1,13 +1,13 @@
 export interface Course
 {
-    id?:Int16Array,
+    id?:number,
     ttl:string,
     dt_lcmt:string,
     dett: string,
     cghr:string,
     img:string,
     url:string,
-    tip:Int16Array,
+    tip:number,
     ntc:boolean,
     emp:string,
 }
