@@ -43,6 +43,6 @@ export class UpdateCourseComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(['/cursos']);
+    this.router.navigate([`/curso/${this.course.id}`]);
   }
 }

@@ -17,7 +17,9 @@
     <input type="text" name="tip" id="tip" [(ngModel)]="course.tip">
     <label for="">Notícia</label>
     <input type="text" name="ntc" id="ntc" [(ngModel)]="course.ntc">
-    <button class="btn btn-dark" (click)="updateCourse()">Salvar</button>
-    <button class="btn btn-dark" (click)="cancel()">Cancelar</button>
+    <div class="d-flex gap-2 mt-2 mb-4">
+        <button class="btn btn-dark" (click)="updateCourse()">Salvar</button>
+        <button class="btn btn-danger" (click)="cancel()">Cancelar</button>
+    </div>
 
 </form>
