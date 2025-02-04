@@ -14,7 +14,7 @@
     },
     {
       "id": 3,
-      "ttl": "PHP",
+      "ttl": "PHP 8.4",
       "dt_lcmt": "2025-03-02",
       "dett": "curso php no bb",
       "cghr": 30,
@@ -37,16 +37,16 @@
       "id": 4
     },
     {
-      "ttl": "Alura2",
+      "id": 5,
+      "ttl": "Beta Alura",
       "dt_lcmt": "2025-02-07",
-      "dett": "top",
+      "dett": "Teste update",
       "cghr": 78,
       "img": "https://apiunibb.ciatech.com.br/content-v2/Conteudo/NovaHome/BibliotecaDigital/6188/thumb_home_alura_4436.jpg",
       "url": "php.net",
       "tip": "alura",
       "ntc": "0",
-      "emp": "php",
-      "id": 5
+      "emp": "php"
     }
   ]
 }

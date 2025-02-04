@@ -1,7 +1,6 @@
 <form [formGroup]="form" class="d-flex flex-column">
     <label for="">Titulo</label>
     <input type="text" formControlName="ttl" id="ttl">
-   
     <label for="">Data de lançamento</label>
     <input type="date" formControlName="dt_lcmt" id="dt_lcmt">
     <label for="">Detalhes</label>
@@ -18,8 +17,8 @@
     <input type="text" formControlName="tip" id="tip">
     <label for="">Notícia</label>
     <input type="text" formControlName="ntc" id="ntc">
-    <button class="btn btn-dark m-2" (click)="createCourse()">Salvar</button>
-    <div class="alert alert-warning m-2" *ngIf="form.status == 'INVALID'">
+    <button class="btn btn-dark m-2" (click)="createCourse()" [disabled]="!form.valid">Salvar</button>
+    <div class="alert alert-warning m-2 p-2 d-flex justify-content-center" *ngIf="!form.valid">
         Todos os campos são obrigatórios
     </div>
 </form>
