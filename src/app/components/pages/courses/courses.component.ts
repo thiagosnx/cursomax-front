@@ -12,11 +12,12 @@ export class CoursesComponent {
   courses: Course[] = [];
   allCourses: Course[] = [];
   baseApiUrl = environment.baseApiUrl;
+  currentPage:number = 1;
 
   constructor(private courseService: CourseService){ }
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe(
+    this.courseService.getCourses(this.currentPage, 3).subscribe(
       (items) => {
         if(Array.isArray(items)){
           items.forEach((item) => {

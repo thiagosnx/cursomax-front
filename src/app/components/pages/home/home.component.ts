@@ -16,7 +16,7 @@ export class HomeComponent {
   constructor(private courseService: CourseService){ }
 
   ngOnInit(): void {
-    this.courseService.getCourses().subscribe(
+    this.courseService.getCourses(1, 4).subscribe(
       (items) => {
         if(Array.isArray(items)){
           items.forEach((item) => {

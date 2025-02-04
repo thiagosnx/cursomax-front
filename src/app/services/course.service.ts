@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, catchError, tap } from 'rxjs';
 import { Course } from '../models/Course';
 import { Response } from '../models/Response';
@@ -14,8 +14,13 @@ export class CourseService {
 
   constructor(private http: HttpClient) { }
 
-  getCourses():Observable<Response<Course[]>>{
-    return this.http.get<Response<Course[]>>(this.baseApiUrl);
+  getCourses(page: number, limit:number):Observable<Response<Course[]>>{
+
+    // /posts?_page=7&_limit=10
+    let params = new HttpParams()
+      .set("_page", page)
+      .set("_limit", limit)
+    return this.http.get<Response<Course[]>>(this.baseApiUrl, {params:params});
   }
 
   getCourseById(id:number):Observable<Course>{
