@@ -25,15 +25,15 @@
       "emp": "php"
     },
     {
-      "ttl": "teste1",
+      "ttl": "Alura",
       "dt_lcmt": "2025-02-12",
-      "dett": "top",
+      "dett": "curso alura",
       "cghr": 50,
       "img": "https://apiunibb.ciatech.com.br/content-v2/Conteudo/NovaHome/BibliotecaDigital/6188/thumb_home_alura_4436.jpg",
       "url": "teste.com",
       "tip": 1,
       "ntc": true,
-      "emp": "thiago",
+      "emp": "alura",
       "id": 4
     }
   ]
