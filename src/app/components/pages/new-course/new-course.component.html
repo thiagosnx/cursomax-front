@@ -1,21 +1,21 @@
-<form class="d-flex flex-column">
+<form [formGroup]="form" class="d-flex flex-column">
     <label for="">Titulo</label>
-    <input type="text" name="ttl" id="ttl" [(ngModel)]="course.ttl">
+    <input type="text" formControlName="ttl" id="ttl">
     <label for="">Data de lançamento</label>
-    <input type="date" name="dt_lcmt" id="dt_lcmt" [(ngModel)]="course.dt_lcmt">
+    <input type="date" formControlName="dt_lcmt" id="dt_lcmt">
     <label for="">Detalhes</label>
-    <input type="textarea" name="dett" id="dett" [(ngModel)]="course.dett">
+    <input type="textarea" formControlName="dett" id="dett">
     <label for="">Carga Horária</label>
-    <input type="number" name="cghr" id="cghr" [(ngModel)]="course.cghr">
+    <input type="number" formControlName="cghr" id="cghr">
     <label for="">Url da Imagem</label>
-    <input type="text" name="img" id="img" [(ngModel)]="course.img">
+    <input type="text" formControlName="img" id="img">
     <label for="">Url do Curso</label>
-    <input type="text" name="url" id="url" [(ngModel)]="course.url">
+    <input type="text" formControlName="url" id="url">
     <label for="">Empresa</label>
-    <input type="text" name="emp" id="emp" [(ngModel)]="course.emp">
+    <input type="text" formControlName="emp" id="emp">
     <label for="">Tipo do Curso</label>
-    <input type="text" name="tip" id="tip" [(ngModel)]="course.tip">
+    <input type="text" formControlName="tip" id="tip">
     <label for="">Notícia</label>
-    <input type="text" name="ntc" id="ntc" [(ngModel)]="course.ntc">
+    <input type="text" formControlName="ntc" id="ntc">
     <button class="btn btn-dark" (click)="createCourse()">Salvar</button>
 </form>
