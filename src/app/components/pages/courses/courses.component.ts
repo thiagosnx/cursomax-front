@@ -14,6 +14,7 @@ export class CoursesComponent {
   allCourses: Course[] = [];
   baseApiUrl = environment.baseApiUrl;
   currentPage:number = 1;
+  filter:string = '';
 
   constructor(
     private courseService: CourseService,
@@ -42,7 +43,7 @@ export class CoursesComponent {
     const target= e.target as HTMLInputElement
     const value = target.value
 
-    this.courses = this.courses.filter((course)=>{
+    this.courses = this.allCourses.filter((course)=>{
       return course.ttl.toLowerCase().includes(value);
     })
   }

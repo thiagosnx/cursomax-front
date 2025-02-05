@@ -1,8 +1,16 @@
 <div class="search-container">
-    <form>
-        <input type="text" placeholder="Search"
-        (input)="search($event)"> 
+    <form class="m-4">
+        <input type="text" placeholder="Buscar curso..."
+        (input)="search($event)"
+        class="p-1 w-100"> 
+
     </form>
+    <!-- <div class="m-4">
+        <input type="search" placeholder="Buscar curso..."
+        class="p-1 w-100"
+        [(ngModel)]="filter"
+        > 
+    </div> -->
 </div>
 <div class="course-container">
     <a class="course" routerLink="/cursos/novo" *ngIf="isLogged()"> + </a>
