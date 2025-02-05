@@ -41,4 +41,10 @@ export class LoginComponent implements OnInit{
       });
     }
   }
+  logout(){
+    this.service.logout();
+  }
+  isLogged():boolean{
+    return this.service.logged();  
+  }
 }

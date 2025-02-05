@@ -23,12 +23,21 @@ export class UserService {
       tap(response => {
         if(!response.access_token){
           this.token = "Crendenciais inválidas";
+          return;
         }
         this.token = response.access_token;
+        localStorage.setItem('token', this.token!)
       })
     );
   }
-  public getToken():string | null{
-    return this.token;
+  
+  getToken():string | null{
+    return localStorage.getItem('token');
+  }
+  logged() : boolean{
+    return this.getToken() !== null;
+  }
+  logout():void{
+    localStorage.removeItem('token');
   }
 }

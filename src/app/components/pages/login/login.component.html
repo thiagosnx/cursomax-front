@@ -1,7 +1,13 @@
-<form [formGroup]="form" class="d-flex flex-column">
+<form [formGroup]="form" class="d-flex flex-column" *ngIf="!isLogged(); else logged">
     <label for="">Username</label>
     <input type="text" formControlName="username" id="username">
     <label for="">Senha</label>
     <input type="password" formControlName="password" id="password">
     <button class="btn btn-dark m-2" (click)="login()" [disabled]="!form.valid">Entrar</button>
 </form>
+<ng-template #logged>
+    <div class="container d-flex flex-column justify-content-center align-items-center m-4">
+        <p>Usuário autenticado</p>
+        <button class="btn btn-danger"(click)="logout()">Deslogar</button>
+    </div>
+</ng-template>
