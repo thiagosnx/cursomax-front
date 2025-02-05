@@ -14,6 +14,7 @@ import { NewCourseComponent } from './components/pages/new-course/new-course.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateCourseComponent } from './components/pages/update-course/update-course.component';
 import { DeleteCourseComponent } from './components/pages/delete-course/delete-course.component';
+import { LoginComponent } from './components/pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DeleteCourseComponent } from './components/pages/delete-course/delete-c
     NewCourseComponent,
     UpdateCourseComponent,
     DeleteCourseComponent,
+    LoginComponent,
   ],
   imports: [
     CarouselModule.forRoot(),
