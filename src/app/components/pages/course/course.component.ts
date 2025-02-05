@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../../services/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from '../../../models/Course';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-course',
@@ -27,6 +28,7 @@ export class CourseComponent implements OnInit{
     private service: CourseService,
     private route: ActivatedRoute,
     private router: Router,
+    private userService: UserService,
   ){ }
 
   ngOnInit(): void {
@@ -35,12 +37,15 @@ export class CourseComponent implements OnInit{
       this.course = course;
     })
   }
-
+  isLogged():boolean{
+    return this.userService.logged();
+  }
   deleteCourse(){
-    if(this.course.id){
+    if(this.course.id && this.isLogged()){
       this.service.deleteCourse(this.course.id).subscribe(()=>{
         this.router.navigate(['/cursos']);
       })
     }
   }
+
 }

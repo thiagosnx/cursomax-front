@@ -25,16 +25,16 @@
       "emp": "php"
     },
     {
-      "ttl": "Alura",
+      "id": 4,
+      "ttl": "Alura Beta",
       "dt_lcmt": "2025-02-12",
       "dett": "curso alura",
       "cghr": 50,
       "img": "https://apiunibb.ciatech.com.br/content-v2/Conteudo/NovaHome/BibliotecaDigital/6188/thumb_home_alura_4436.jpg",
       "url": "teste.com",
       "tip": 1,
-      "ntc": true,
-      "emp": "alura",
-      "id": 4
+      "ntc": 1,
+      "emp": "alura"
     },
     {
       "id": 5,
@@ -45,7 +45,7 @@
       "img": "https://apiunibb.ciatech.com.br/content-v2/Conteudo/NovaHome/BibliotecaDigital/6188/thumb_home_alura_4436.jpg",
       "url": "php.net",
       "tip": "alura",
-      "ntc": "0",
+      "ntc": 0,
       "emp": "php"
     }
   ]

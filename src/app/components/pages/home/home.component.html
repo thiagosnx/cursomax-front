@@ -1,8 +1,8 @@
 <div class="d-flex flex-column align-items-center">
     <div class="carousel-container w-60">
         <div class="carousel-slide">
-            <carousel  class="carousel-fade"> 
-                <slide *ngFor="let course of courses">
+            <carousel class="carousel-fade"> 
+                <slide *ngFor="let course of newsCourses">
                     <div class="carousel-img">
                         <a target="_blank" href="{{course.url}}">
                             <img src="{{ course.img }}" alt="{{ course.ttl }}">

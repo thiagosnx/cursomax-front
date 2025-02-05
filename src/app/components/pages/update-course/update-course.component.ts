@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CourseService } from '../../../services/course.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../../services/user.service';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class UpdateCourseComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private service: CourseService,
+    private userService: UserService,
     private formBuilder: FormBuilder,
   ){ }
   courseId = 0;
@@ -80,7 +82,9 @@ export class UpdateCourseComponent implements OnInit {
       })
       
   }
-
+  isLogged():boolean{
+    return this.userService.logged();
+  }
   updateCourse(){
     if(this.form.valid){
       this.service.updateCourse(this.form.value).subscribe(()=>{

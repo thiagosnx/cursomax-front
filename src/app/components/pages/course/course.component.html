@@ -8,8 +8,8 @@
         <h3>{{ course.ttl }}</h3> 
         <p>Carga horária: {{ course.cghr }} horas</p>
         <p>{{ course.emp }}</p>
-        <a [routerLink]="['/cursos/editar', course.id]"><button class="btn btn-dark">Editar</button></a>
-        <button class="btn btn-danger m-2" (click)="deleteCourse()">Excluir</button>
+        <a [routerLink]="['/cursos/editar', course.id]"><button class="btn btn-dark" *ngIf="isLogged()">Editar</button></a>
+        <button class="btn btn-danger m-2" (click)="deleteCourse()" *ngIf="isLogged()">Excluir</button>
         <!-- <a [routerLink]="['/cursos/excluir', course.id]"><p>Excluir</p></a> -->
     </div>
     <div class="info-container m-4">

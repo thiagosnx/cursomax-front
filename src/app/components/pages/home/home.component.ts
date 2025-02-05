@@ -25,7 +25,7 @@ export class HomeComponent {
             }
           });
           this.courses = items;
-          this.newsCourses = items.filter(course => course.news === true);
+          this.newsCourses = items.filter(course => course.ntc === 1);
         }
       }
     )

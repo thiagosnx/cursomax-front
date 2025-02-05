@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CourseService } from '../../../services/course.service';
 import { Course } from '../../../models/Course';
 import { environment } from '../../../../environments/environment';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-courses',
@@ -14,10 +15,13 @@ export class CoursesComponent {
   baseApiUrl = environment.baseApiUrl;
   currentPage:number = 1;
 
-  constructor(private courseService: CourseService){ }
+  constructor(
+    private courseService: CourseService,
+    private userService: UserService
+  ){ }
 
   ngOnInit(): void {
-    this.courseService.getCourses(this.currentPage, 3).subscribe(
+    this.courseService.getCourses(this.currentPage, 10).subscribe(
       (items) => {
         if(Array.isArray(items)){
           items.forEach((item) => {
@@ -31,6 +35,7 @@ export class CoursesComponent {
       }
     )
   }
+ 
   searchTerm = "";
 
   search(e:Event):void{
@@ -40,5 +45,8 @@ export class CoursesComponent {
     this.courses = this.courses.filter((course)=>{
       return course.ttl.toLowerCase().includes(value);
     })
+  }
+  isLogged():boolean{
+    return this.userService.logged();
   }
 }
