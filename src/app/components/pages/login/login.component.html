@@ -4,7 +4,4 @@
     <label for="">Senha</label>
     <input type="password" formControlName="password" id="password">
     <button class="btn btn-dark m-2" (click)="login()" [disabled]="!form.valid">Entrar</button>
-    <div class="alert alert-warning m-2 p-2 d-flex justify-content-center" *ngIf="!form.valid">
-        Todos os campos são obrigatórios
-    </div>
 </form>
