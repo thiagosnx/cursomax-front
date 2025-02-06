@@ -33,12 +33,14 @@ export class UserService {
   getUserLogged() : Observable<any>{
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `${localStorage.getItem('token')}`
     });
-    return this.http.get<any>(`${this.apiUrl}/api/me`, { headers })
+    return this.http.post<any>(`${this.apiUrl}/api/me`, { headers })
     .pipe(
       tap(response => {
+        console.log(response);
         if(!response.username){
+          localStorage.removeItem('token');
           return false;
         }
         return true;
@@ -46,7 +48,8 @@ export class UserService {
     )
   }
   getToken():string | null{
-    if(!this.getUserLogged){
+    if(!this.getUserLogged()){
+      localStorage.removeItem('token');
       return null;
     }
     return localStorage.getItem('token');
