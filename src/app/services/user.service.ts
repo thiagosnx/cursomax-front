@@ -30,8 +30,25 @@ export class UserService {
       })
     );
   }
-  
+  getUserLogged() : Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.get<any>(`${this.apiUrl}/api/me`, { headers })
+    .pipe(
+      tap(response => {
+        if(!response.username){
+          return false;
+        }
+        return true;
+      })
+    )
+  }
   getToken():string | null{
+    if(!this.getUserLogged){
+      return null;
+    }
     return localStorage.getItem('token');
   }
   logged() : boolean{
