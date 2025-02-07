@@ -7,6 +7,7 @@ import { NewCourseComponent } from './components/pages/new-course/new-course.com
 import { UpdateCourseComponent } from './components/pages/update-course/update-course.component';
 import { DeleteCourseComponent } from './components/pages/delete-course/delete-course.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { ContributionComponent } from './components/pages/contribution/contribution.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'cursos/editar/:id', component: UpdateCourseComponent},
   {path: 'cursos/excluir/:id', component: DeleteCourseComponent},
   {path: 'cursos/novo', component: NewCourseComponent},
+  {path: 'cursos/contribuir', component: ContributionComponent},
   {path: 'auth/login', component: LoginComponent},
 ];
 

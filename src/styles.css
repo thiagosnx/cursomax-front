@@ -7,6 +7,7 @@
     overflow: hidden;
 }
 
+
 body{
     background-color: #01080E;
     font-family: 'Oswald', sans-serif;
@@ -166,17 +167,19 @@ a fa-icon{
 
 .course-img{
     width: 100%;
-    height: 200px; 
-    overflow: hidden; 
-    border-radius: 2%;
+    height: 30vh; 
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 
 .course-img img{
     width: 100%; 
-    height: 100%; 
+    height: 100%;
     object-fit: cover; 
     object-position: center center; 
-    border-radius: 2%; 
+    border-radius: 2%;
 }
 
 .course h3, .course p, .course a{
