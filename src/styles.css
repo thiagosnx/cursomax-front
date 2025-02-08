@@ -14,7 +14,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto Mono', monospace;
     box-sizing: border-box;
-    color: white;
+    color: #EAEAEA;
 
 }
 
@@ -26,7 +26,7 @@ a{
 }
 
 a:hover{
-    color: #F89820;
+    color: #0077B6;
 }
 
 /*FORM*/
@@ -65,7 +65,11 @@ input{
 }
 input:focus{
     outline: none;
-    box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.301);
+    box-shadow: rgba(10, 50, 90, 0.4) 2px 2px,  
+            rgba(10, 50, 90, 0.3) 4px 4px,  
+            rgba(10, 50, 90, 0.2) 6px 6px,  
+            rgba(10, 50, 90, 0.1) 8px 8px,  
+            rgba(10, 50, 90, 0.05) 10px 10px;
 }
 
 input[type="submit"], .register{
@@ -155,14 +159,21 @@ a fa-icon{
     align-items: center;
     flex-direction: column;
     /* background-color: #23272f; */
-    background-color: #212529;
+    background-color: #121C2A;
 }
 .course{
     transition: all .5s ease;
 }
 
 .course:hover {
-    box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.301);
+    /* box-shadow: 0 0 10px 6px rgba(255, 255, 255, 0.301); */
+    /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
+    box-shadow: rgba(10, 50, 90, 0.4) 2px 2px,  
+            rgba(10, 50, 90, 0.3) 4px 4px,  
+            rgba(10, 50, 90, 0.2) 6px 6px,  
+            rgba(10, 50, 90, 0.1) 8px 8px,  
+            rgba(10, 50, 90, 0.05) 10px 10px;
+
 }
 
 .course-img{
@@ -185,11 +196,15 @@ a fa-icon{
 .course h3, .course p, .course a{
     margin-bottom: 1em;
     /* background-color: #23272f; */
-    background-color: #212529;
+    background-color: #121C2A;
     border-radius: 5px;
 }
 
 .course .date{
     font-size: .7em;
     font-style: italic;
+}
+
+.btn.btn-dark{
+    background-color: #121C2A !important;
 }

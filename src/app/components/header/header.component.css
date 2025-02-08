@@ -1,5 +1,6 @@
 nav{
-    background-color: #212529;
+    /* background-color: #212529; */
+    background-color: #121C2A;
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -29,6 +30,6 @@ nav{
 
 
 a:hover{
-    color: #F89820;
+    color: #0077B6;
   
 }
