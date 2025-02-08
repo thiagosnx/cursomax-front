@@ -7,6 +7,10 @@
     overflow: hidden;
 }
 
+html, body{
+    width: 100% !important;
+    overflow-x: hidden;
+}
 
 body{
     background-color: #01080E;
@@ -74,7 +78,7 @@ input:focus{
 
 input[type="submit"], .register{
     background-color: #01080E;
-    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.301);
     padding: .6em 1em;
     font-weight: bold;
     font-size: 1.1em;
@@ -143,23 +147,15 @@ a fa-icon{
 }
 
 
-.course-container{
+/* .course-container{
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
-}
+} */
 .course{
-    flex: 1 1 25%;
-    max-width: 24%;
     border-radius: 10px;
-    padding: 0;
-    margin: .5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: #23272f; */
-    background-color: #121C2A;
+   
+    border: 1px solid rgba(255, 255, 255, 0.301);
 }
 .course{
     transition: all .5s ease;
@@ -196,7 +192,7 @@ a fa-icon{
 .course h3, .course p, .course a{
     margin-bottom: 1em;
     /* background-color: #23272f; */
-    background-color: #121C2A;
+    /* background-color: #000000; */
     border-radius: 5px;
 }
 
