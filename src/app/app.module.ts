@@ -16,6 +16,7 @@ import { UpdateCourseComponent } from './components/pages/update-course/update-c
 import { DeleteCourseComponent } from './components/pages/delete-course/delete-course.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { ContributionComponent } from './components/pages/contribution/contribution.component';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,10 @@ import { ContributionComponent } from './components/pages/contribution/contribut
     AppRoutingModule,
     HttpClientModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

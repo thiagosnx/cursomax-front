@@ -21,7 +21,7 @@ export class ContributionComponent implements OnInit {
       this.formContribution = this.formBuilder.group({
         url: ['', Validators.compose([
           Validators.required,
-          Validators.pattern(/^(https?:\/\/)(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/),
+          Validators.pattern(/https?:\/\/(www\.)?[a-zA-Z0-9-]+\.[a-z]{2,}.*$/)
         ])]
       })
 

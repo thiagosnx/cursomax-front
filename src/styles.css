@@ -208,3 +208,7 @@ a fa-icon{
 .btn.btn-dark{
     background-color: #121C2A !important;
 }
+
+.text-warning{
+    color:#F2A007 !important; 
+}

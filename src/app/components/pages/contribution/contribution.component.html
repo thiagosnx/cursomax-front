@@ -6,10 +6,13 @@
         </div>
         <form [formGroup]="formContribution" class="d-flex flex-column">
             <label for="">URL</label>
-            <input type="text" formControlName="url" id="url" placeholder="https://...">
+            <input class="p-2" type="text" formControlName="url" id="url" placeholder="https://...">
             <div class="d-flex">
                 <button class="btn btn-dark mt-2 mb-2" [disabled]="!formContribution.valid">Enviar</button>
+                <p class="text-warning m-2" *ngIf="formContribution.get('url')?.hasError('pattern')">Insira uma URL válida (https://site.com)</p>
             </div>
+
+              
         </form>
     </div>
     <div class="pix-container">
@@ -18,9 +21,10 @@
         </div>
         <form [formGroup]="formPix" class="d-flex flex-column mt-5">
             <label for="">Valor</label>
-            <input type="text" formControlName="donation" id="donation" placeholder="R$00,00">
-            <div class="d-flex">
-                <button class="btn btn-dark mt-2 mb-2" [disabled]="!formPix.valid">Doar</button>
+            <input class="p-2" type="text" formControlName="value" id="value" placeholder="R$00,00" mask="separator.2" thousandSeparator="." decimalMarker=",">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-dark mt-2 mb-2" [disabled]="!formPix.valid">Doar</button> 
+                <p *ngIf="formPix.value.value" class="m-2 text-success"> R$ {{ formPix.value.value }}</p>
             </div>
         </form>
     </div>
