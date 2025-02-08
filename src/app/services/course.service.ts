@@ -30,7 +30,11 @@ export class CourseService {
   }
 
   getCourseById(id:number):Observable<Course>{
-    return this.http.get<Course>(`${this.apiUrl}/${id}`);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.get<Course>(`${this.apiUrl}/${id}`, { headers });
   }
 
   createCourse(course: Course):Observable<Course>{

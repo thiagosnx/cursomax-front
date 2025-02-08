@@ -1,13 +1,14 @@
 <div class="course-container gap-4">
     <div class="course"> 
         <a href="{{ course.url }}" target="_blank">
-            <div class="course-img">
+            <div class="course-img" >
                 <img src="{{ course.img }}" alt="{{course.ttl}}">
             </div>
         </a>
-        <h3>{{ course.ttl }}</h3> 
-        <p>Carga horária: {{ course.cghr }} horas</p>
-        <p>{{ course.emp }}</p>
+        <h4 class="mt-2">{{ course.ttl }}</h4> 
+        <p class="date">Data de Lançamento: {{course.dt_lcmt}}</p>
+        <p>Duração: {{ course.cghr }} horas</p>
+        <p class="date">Empresa: {{ course.emp }}</p>
         <a [routerLink]="['/cursos/editar', course.id]"><button class="btn btn-dark" *ngIf="isLogged()">Editar</button></a>
         <button class="btn btn-danger m-2" (click)="deleteCourse()" *ngIf="isLogged()">Excluir</button>
         <!-- <a [routerLink]="['/cursos/excluir', course.id]"><p>Excluir</p></a> -->

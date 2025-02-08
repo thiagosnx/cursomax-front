@@ -4,7 +4,8 @@
     <label for="">Data de lançamento</label>
     <input type="date" formControlName="dt_lcmt" id="dt_lcmt">
     <label for="">Detalhes</label>
-    <input type="textarea" formControlName="dett" id="dett">
+    <!-- <input type="textarea" formControlName="dett" id="dett"> -->
+    <textarea formControlName="dett" id="dett"></textarea>
     <label for="">Carga Horária</label>
     <input type="number" formControlName="cghr" id="cghr">
     <label for="">Url da Imagem</label>
@@ -18,7 +19,7 @@
     <label for="">Notícia</label>
     <input type="text" formControlName="ntc" id="ntc">
     <button class="btn btn-dark m-2" (click)="createCourse()" [disabled]="!form.valid">Salvar</button>
-    <div class="alert alert-warning m-2 p-2 d-flex justify-content-center" *ngIf="!form.valid">
+    <div class="text-warning m-2 p-2 d-flex justify-content-center" *ngIf="!form.valid">
         Todos os campos são obrigatórios
     </div>
 </form>
