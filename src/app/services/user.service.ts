@@ -9,7 +9,8 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
 
-  private apiUrl = environment.baseApiPHP; 
+  // private apiUrl = environment.baseApiPHP; 
+  private apiUrl = environment.baseApiUrl;
   private token : string | null = null;
 
   constructor(private http: HttpClient) { }

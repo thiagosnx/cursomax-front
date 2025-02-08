@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, map, tap, throwError } from 'rxjs';
 import { Course } from '../models/Course';
 import { Response } from '../models/Response';
 import { environment } from '../../environments/environment';
@@ -23,23 +23,24 @@ export class CourseService {
     let params = new HttpParams()
       .set("_page", page)
       .set("_limit", limit)
-    return this.http.get<Response<Course[]>>(this.baseApiUrl, {params:params});
+    return this.http.get<Response<Course[]>>(this.apiUrl, {params:params})
+    
   }
 
   getCourseById(id:number):Observable<Course>{
-    return this.http.get<Course>(`${this.baseApiUrl}/${id}`);
+    return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
 
   createCourse(course: Course):Observable<Course>{
     if(this.isLogged()){
-      return this.http.post<Course>(this.baseApiUrl, course);
+      return this.http.post<Course>(this.apiUrl, course);
     }
     return throwError(()=> new Error('Erro de autenticação'))
   }
 
   updateCourse(course: Course):Observable<Response<Course>> {
     if(this.isLogged()){
-      return this.http.put<Response<Course>>(`${this.baseApiUrl}/${course.id}`, course);
+      return this.http.put<Response<Course>>(`${this.apiUrl}/${course.id}`, course);
     }
     return throwError(()=> new Error('Erro de autenticação'))
     
@@ -47,7 +48,7 @@ export class CourseService {
 
   deleteCourse(id:number):Observable<Course>{
     if(this.isLogged()){
-      return this.http.delete<Course>(`${this.baseApiUrl}/${id}`)
+      return this.http.delete<Course>(`${this.apiUrl}/${id}`)
     }
     return throwError(()=> new Error('Erro de autenticação'))
   }
