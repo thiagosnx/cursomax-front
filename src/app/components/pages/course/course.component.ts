@@ -41,6 +41,7 @@ export class CourseComponent implements OnInit{
     return this.userService.logged();
   }
   deleteCourse(){
+    console.log(localStorage);
     if(this.course.id && this.isLogged()){
       this.service.deleteCourse(this.course.id).subscribe(()=>{
         this.router.navigate(['/cursos']);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,  HttpParams } from '@angular/common/http';
+import { HttpClient,  HttpHeaders,  HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Course } from '../models/Course';
 import { Response } from '../models/Response';
@@ -13,8 +13,10 @@ export class CourseService {
   private baseApiUrl = environment.baseApiUrl;
   private apiUrl = `${this.baseApiUrl}/api/curso`;
 
-  constructor(private http: HttpClient, private userService: UserService) { }
+  
 
+  constructor(private http: HttpClient, private userService: UserService) { }
+  
   isLogged():boolean{
     return this.userService.logged();
   }
@@ -32,23 +34,35 @@ export class CourseService {
   }
 
   createCourse(course: Course):Observable<Course>{
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
     if(this.isLogged()){
-      return this.http.post<Course>(this.apiUrl, course);
+      return this.http.post<Course>(this.apiUrl, course, {headers });
     }
     return throwError(()=> new Error('Erro de autenticação'))
   }
 
   updateCourse(course: Course):Observable<Response<Course>> {
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
     if(this.isLogged()){
-      return this.http.put<Response<Course>>(`${this.apiUrl}/${course.id}`, course);
+      return this.http.put<Response<Course>>(`${this.apiUrl}/${course.id}`, course, {headers });
     }
     return throwError(()=> new Error('Erro de autenticação'))
     
   }
 
   deleteCourse(id:number):Observable<Course>{
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
     if(this.isLogged()){
-      return this.http.delete<Course>(`${this.apiUrl}/${id}`)
+      return this.http.delete<Course>(`${this.apiUrl}/${id}`, { headers })
     }
     return throwError(()=> new Error('Erro de autenticação'))
   }

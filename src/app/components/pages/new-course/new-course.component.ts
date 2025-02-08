@@ -49,7 +49,7 @@ export class NewCourseComponent implements OnInit {
         ])],
         tip: ['', Validators.compose([
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(1)
         ])],
         ntc: ['', Validators.compose([
           Validators.required,

@@ -27,32 +27,29 @@ export class UserService {
           return;
         }
         this.token = response.access_token;
+        
         localStorage.setItem('token', this.token!)
       })
     );
   }
-  getUserLogged() : Observable<any>{
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `${localStorage.getItem('token')}`
-    });
-    return this.http.post<any>(`${this.apiUrl}/api/me`, { headers })
-    .pipe(
-      tap(response => {
-        console.log(response);
-        if(!response.username){
-          localStorage.removeItem('token');
-          return false;
-        }
-        return true;
-      })
-    )
-  }
+  // getUserLogged() : Observable<any>{
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'Authorization': `${localStorage.getItem('token')}`
+  //   });
+  //   return this.http.post<any>(`${this.apiUrl}/api/me`, { headers })
+  //   .pipe(
+  //     tap(response => {
+  //       console.log(response);
+  //       if(!response.username){
+  //         localStorage.removeItem('token');
+  //         return false;
+  //       }
+  //       return true;
+  //     })
+  //   )
+  // }
   getToken():string | null{
-    if(!this.getUserLogged()){
-      localStorage.removeItem('token');
-      return null;
-    }
     return localStorage.getItem('token');
   }
   logged() : boolean{
