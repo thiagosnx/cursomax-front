@@ -19,12 +19,14 @@
             <div class="course-img">
                 <img src="{{ course.img }}" alt="{{course.ttl}}">
             </div>
+        
+            <h4 class="mt-2">{{ course.ttl }}</h4> 
+            <p class="date">Data de Lançamento: {{course.dt_lcmt}}</p>
+            <p *ngIf="course.cghr" >Duração: {{ course.cghr }} horas</p>
+            <p class="date">Empresa: {{ course.emp }}</p>
+            <!-- <p>{{ course.dett }}</p> -->
+            <!-- <p><a href="{{course.url}}" target="_blank">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p> -->
+            <a *ngIf="isLogged()" [routerLink]="['/curso', course.id]"><p>Detalhes</p></a>
         </a>
-        <h4>{{ course.ttl }}</h4> 
-        <p class="date">Data de Lançamento: {{course.dt_lcmt}}</p>
-        <p>Duração: {{ course.cghr }} horas</p>
-        <!-- <p>{{ course.dett }}</p> -->
-        <p><a href="{{course.url}}" target="_blank">Acessar <i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
-        <a [routerLink]="['/curso', course.id]"><p>Detalhes</p></a>
     </div>
 </div>

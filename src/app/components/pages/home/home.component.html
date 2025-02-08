@@ -22,11 +22,11 @@
                 <div class="course-img">
                     <img src="{{ course.img }}" alt="{{course.ttl}}">
                 </div>
+                <h4 class="mt-2">{{ course.ttl }}</h4> 
+                <p class="date">Data de Lançamento: {{course.dt_lcmt}}</p>
+                <p>Duração: {{ course.cghr }} horas</p>
+                <p class="date">Empresa: {{ course.emp }}</p>
             </a>
-            <h4>{{ course.ttl }}</h4 > 
-            <p>{{ course.cghr }} horas</p>
-            <p>{{ course.emp }}</p>
-            <a [routerLink]="['/curso', course.id]"><p>Detalhes</p></a>
         </div>
     </div>
 </div>
