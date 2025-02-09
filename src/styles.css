@@ -211,3 +211,39 @@ a fa-icon{
 .text-warning{
     color:#F2A007 !important; 
 }
+
+.toast-success {
+    background-color: #28a745 !important; 
+    color: white !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.toast-warning {
+    background-color: #ffc107 !important; /* Amarelo Warning */
+    color: black !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+  
+.toast-error {
+    background-color: #dc3545 !important; /* Vermelho Erro */
+    color: white !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#toast-container {
+    top: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+}

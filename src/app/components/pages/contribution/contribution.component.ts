@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContributionService } from '../../../services/contribution.service';
-import { tap } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contribution',
@@ -18,6 +18,7 @@ export class ContributionComponent implements OnInit {
   constructor(
     private contributionService: ContributionService,
     private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ){ }
 
   ngOnInit(): void {
@@ -38,10 +39,10 @@ export class ContributionComponent implements OnInit {
     if(this.formContribution.valid){
       this.contributionService.createContribution(this.formContribution.value).subscribe({
         next : value => {
-            alert("Curso:" + value)
+          this.toastr.success('Contribuição enviada com sucesso', 'Obrigado!');
         },
         error: err =>{
-          console.log(err);
+          this.toastr.error('Algo deu errado com a solicitação. Se o erro persistir, contate o suporte.', 'Erro :(')
           
         }
       })
@@ -55,7 +56,7 @@ export class ContributionComponent implements OnInit {
           this.copia_cola = res.qr_code;
         },
         error: err => {
-            console.log(err);
+            this.toastr.error('Algo deu errado com a solicitação. Se o erro persistir, contate o suporte.', 'Erro :(')
             
         },
       });
@@ -65,7 +66,7 @@ export class ContributionComponent implements OnInit {
   copiar():void{
     if(this.copia_cola){
       navigator.clipboard.writeText(this.copia_cola).then(()=>{
-        alert('Copiado para a área de transferência');
+        this.toastr.success('Código copiado para a área de transferência!');
       })
     }
   }

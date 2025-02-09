@@ -17,6 +17,8 @@ import { DeleteCourseComponent } from './components/pages/delete-course/delete-c
 import { LoginComponent } from './components/pages/login/login.component';
 import { ContributionComponent } from './components/pages/contribution/contribution.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,14 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     HttpClientModule, 
     FormsModule,
     ReactiveFormsModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    })
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]
