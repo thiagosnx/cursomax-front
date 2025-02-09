@@ -3,10 +3,9 @@ nav{
     /* background-color: #121C2A; */
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 1.5em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.301);
     height: 16px;
-
 }
 
 .brand, .links{
