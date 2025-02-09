@@ -32,7 +32,7 @@ export class CourseService {
   getCourseById(id:number):Observable<Course>{
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     return this.http.get<Course>(`${this.apiUrl}/${id}`, { headers });
   }
@@ -40,7 +40,7 @@ export class CourseService {
   createCourse(course: Course):Observable<Course>{
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     if(this.isLogged()){
       return this.http.post<Course>(this.apiUrl, course, {headers });
@@ -51,7 +51,7 @@ export class CourseService {
   updateCourse(course: Course):Observable<Response<Course>> {
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     if(this.isLogged()){
       return this.http.put<Response<Course>>(`${this.apiUrl}/${course.id}`, course, {headers });
@@ -63,7 +63,7 @@ export class CourseService {
   deleteCourse(id:number):Observable<Course>{
     const headers = new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
     });
     if(this.isLogged()){
       return this.http.delete<Course>(`${this.apiUrl}/${id}`, { headers })

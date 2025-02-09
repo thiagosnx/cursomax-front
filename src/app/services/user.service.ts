@@ -28,21 +28,21 @@ export class UserService {
         }
         this.token = response.access_token;
         
-        localStorage.setItem('token', this.token!)
+        sessionStorage.setItem('token', this.token!)
       })
     );
   }
   // getUserLogged() : Observable<any>{
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/json',
-  //     'Authorization': `${localStorage.getItem('token')}`
+  //     'Authorization': `${sessionStorage.getItem('token')}`
   //   });
   //   return this.http.post<any>(`${this.apiUrl}/api/me`, { headers })
   //   .pipe(
   //     tap(response => {
   //       console.log(response);
   //       if(!response.username){
-  //         localStorage.removeItem('token');
+  //         sessionStorage.removeItem('token');
   //         return false;
   //       }
   //       return true;
@@ -50,12 +50,12 @@ export class UserService {
   //   )
   // }
   getToken():string | null{
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
   logged() : boolean{
     return this.getToken() !== null;
   }
   logout():void{
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
   }
 }
