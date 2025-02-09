@@ -14,6 +14,7 @@ export class ContributionComponent implements OnInit {
   formPix!: FormGroup;
   qr_code? :string = '';
   copia_cola? :string = '';
+  loading : boolean = false;
 
   constructor(
     private contributionService: ContributionService,
@@ -49,6 +50,7 @@ export class ContributionComponent implements OnInit {
     }
   }
   doar():any{
+    this.loading = true;
     if(this.formPix.valid){
       this.contributionService.createDonation(this.formPix.value).subscribe({
         next: res => {
@@ -59,6 +61,9 @@ export class ContributionComponent implements OnInit {
             this.toastr.error('Algo deu errado com a solicitação. Se o erro persistir, contate o suporte.', 'Erro :(')
             
         },
+        complete: () => {
+            this.loading = false;
+        }
       });
     }    
   }

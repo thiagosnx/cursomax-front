@@ -24,7 +24,8 @@
                 <button class="btn btn-dark mt-2 mb-2" [disabled]="!formPix.valid" (click)="doar()">Doar</button> 
                 <p *ngIf="formPix.value.valor" class="m-2 text-success"> R$ {{ formPix.value.valor }}</p>
             </div>
-            <div class="d-flex flex-column justify-content-center">
+            <p *ngIf="loading">Criando pagamento...</p>
+            <div class="d-flex flex-column justify-content-center" *ngIf="!loading">
                 <img style="width: 400px;" *ngIf="qr_code" src="data:image/png;base64,{{ qr_code }}" alt="qr_code">
                 <button class="btn btn-success mt-2 mb-2 w-50" *ngIf="copia_cola" (click)="copiar()">Copiar</button>
             </div>
