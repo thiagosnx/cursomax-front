@@ -247,3 +247,7 @@ a fa-icon{
     transform: translateX(-50%) !important;
     width: auto !important;
 }
+
+@media(max-width: 786px){
+    
+}

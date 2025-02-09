@@ -1,17 +1,4 @@
 footer{
-    background-color: #212529;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.301);
     bottom: 0;
-}
-
-footer h3{
-    margin-bottom: 1.2em;
-}
-
-footer span{
-    font-weight: bold;
-    color: white;
 }

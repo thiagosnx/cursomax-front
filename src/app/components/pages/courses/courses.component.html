@@ -16,7 +16,7 @@
     <a class="course d-flex align-items-center justify-content-center" routerLink="/cursos/novo" *ngIf="isLogged()"> + </a>
     <div class="course" *ngFor="let course of courses"> 
         <a href="{{ course.url }}" target="_blank">
-            <div class="course-img pt-3">
+            <div class="course-img pt-2">
                 <img src="{{ course.img }}" alt="{{course.ttl}}">
             </div>
         
