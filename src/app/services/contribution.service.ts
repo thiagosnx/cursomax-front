@@ -18,22 +18,16 @@ export class ContributionService {
   }
   getContributions():Observable<Contribution[]> | null{
     if(this.isLogged()){
-      return this.http.get<Contribution[]>(`${this.baseApiUrl}/api/contribuicoes`)
+      return this.http.get<Contribution[]>(`${this.baseApiUrl}/api/contribuicao`)
     }
     return null;
     
   }
   createContribution(contribution : Contribution):Observable<Contribution>{
-    return this.http.post<Contribution>(`${this.baseApiUrl}/api/contribuicoes`, contribution)
+    return this.http.post<Contribution>(`${this.baseApiUrl}/api/contribuicao`, contribution)
   }
-
-  getDoacoes():Observable<Donation[]> | null {
-    if(this.isLogged()){
-      return this.http.get<Donation[]>(`${this.baseApiUrl}/api/doacoes`)
-    }
-    return null;
-  }
+  
   createDonation(donation: Donation): Observable<Donation>{
-    return this.http.post<Donation>(`${this.baseApiUrl}/api/doacoes`, donation)
+    return this.http.post<Donation>(`${this.baseApiUrl}/api/pgto`, donation)
   }
 }
