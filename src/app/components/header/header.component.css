@@ -52,6 +52,9 @@ a:hover {
     nav{
         align-items: center;
     }
+    .info{
+        display: none;
+    }
     .menu-toggle {
         display: block;
     }
