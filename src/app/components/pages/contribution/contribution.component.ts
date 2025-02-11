@@ -15,6 +15,7 @@ export class ContributionComponent implements OnInit {
   qr_code? :string = '';
   copia_cola? :string = '';
   loading : boolean = false;
+  msg_erro = '';
 
   constructor(
     private contributionService: ContributionService,
@@ -43,6 +44,7 @@ export class ContributionComponent implements OnInit {
           this.toastr.success('Contribuição enviada com sucesso', 'Obrigado!');
         },
         error: err =>{
+          this.msg_erro = 'Algo deu errado com a solicitação. Se o erro persistir, contate o suporte';
           this.toastr.error('Algo deu errado com a solicitação. Se o erro persistir, contate o suporte.', 'Erro :(')
           
         }
@@ -56,9 +58,12 @@ export class ContributionComponent implements OnInit {
         next: res => {
           this.qr_code = res.qr_code_base64;
           this.copia_cola = res.qr_code;
+          this.loading = false;
         },
         error: err => {
+          this.msg_erro = 'Algo deu errado com a solicitação. Se o erro persistir, contate o suporte';
             this.toastr.error('Algo deu errado com a solicitação. Se o erro persistir, contate o suporte.', 'Erro :(')
+            this.loading = false;
             
         },
         complete: () => {

@@ -1,15 +1,18 @@
 <nav>
     <a routerLink="/" class="brand">
-        <img src="/assets/img/" alt="">
-        <div class="d-flex gap-2">
-            <h4>CursoMAX </h4>
-        </div>
+      <img src="/assets/img/" alt="">
+      <div class="d-flex gap-2">
+        <h4>CursoMAX</h4>
+      </div>
     </a>
-    <ul class="links">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/cursos">Todos os Cursos</a></li>
-        <li><a routerLink="/cursos/contribuir">Contribuir</a></li>
-        <!-- <li><a routerLink="/admin/new">Adicionar Curso</a></li> -->
-        <!-- <li><a routerLink="/auth/login">Login</a></li> -->
+    <button class="menu-toggle" (click)="toggleMenu()">
+      ☰
+    </button>
+  
+    <ul class="links justify-items-center" [ngClass]="{'show': isMenuOpen}">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/cursos" (click)="closeMenu()">Todos os Cursos</a></li>
+      <li><a routerLink="/cursos/contribuir" (click)="closeMenu()">Contribuir</a></li>
     </ul>
-</nav>
+  </nav>
+  

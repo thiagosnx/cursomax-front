@@ -1,23 +1,23 @@
-<div class="d-flex flex-wrap justify-content-around align-items-center" style="height: 100vh">
-    <div class="url-container">
-        <div class="d-flex flex-column align-items-center">
-            <h5 class="mt-4">Encontrou algum curso gratuito que está faltando aqui?</h5>
-            <h5 class="mb-4">Deixe o link dele abaixo.</h5>
-        </div>
-        <form [formGroup]="formContribution" class="d-flex flex-column">
-            <label for="url">URL</label>
-            <input class="p-2" type="text" formControlName="url" id="url" placeholder="https://...">
-            <div class="d-flex">
-                <button class="btn btn-dark mt-2 mb-2" [disabled]="!formContribution.valid" (click)="contribuir()" >Enviar</button>
-                <p class="text-warning m-2" *ngIf="formContribution.get('url')?.hasError('pattern')">Insira uma URL válida (https://site.com)</p>
+<div class="container min-vh-100 d-flex align-items-center">
+    <div class="row w-100 justify-content-around">
+        <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+            <div class="text-center">
+                <h5 class="mt-4">Encontrou algum curso gratuito que está faltando aqui?</h5>
             </div>
-        </form>
-    </div>
-    <div class="pix-container">
-        <div class="d-flex flex-column align-items-center">
+            <form [formGroup]="formContribution" class="d-flex flex-column">
+                <label for="url">URL</label>
+                <input class="p-2" type="text" formControlName="url" id="url" placeholder="https://...">
+                <div class="d-flex">
+                    <button class="btn btn-dark mt-2 mb-2" [disabled]="!formContribution.valid" (click)="contribuir()" >Enviar</button>
+                    <p class="text-warning m-2" *ngIf="formContribution.get('url')?.hasError('pattern')">Insira uma URL válida (https://site.com)</p>
+                </div>
+            </form>
+        </div>
+    <div class="col-12 col-md-5 d-flex flex-column align-items-center mt-4 mt-md-0">
+        <div class="text-center">
             <h5 class="mt-4">Fazer uma doação ao projeto</h5>
         </div>
-        <form [formGroup]="formPix" class="d-flex flex-column mt-5">
+        <form [formGroup]="formPix" class="d-flex flex-column mt-4">
             <label for="">Valor</label>
             <input class="p-2" type="text" formControlName="valor" id="valor" placeholder="R$00,00" mask="separator.2" thousandSeparator="." decimalMarker=",">
             <div class="d-flex align-items-center">
@@ -26,10 +26,14 @@
             </div>
             <p *ngIf="loading">Criando pagamento...</p>
             <div class="d-flex flex-column justify-content-center" *ngIf="!loading">
-                <img style="width: 400px;" *ngIf="qr_code" src="data:image/png;base64,{{ qr_code }}" alt="qr_code">
-                <button class="btn btn-success mt-2 mb-2 w-50" *ngIf="copia_cola" (click)="copiar()">Copiar</button>
+                <button class="btn btn-success mt-2 mb-2 w-100" *ngIf="copia_cola" (click)="copiar()">Copiar</button>
+                <img class="img-fluid w-100" *ngIf="qr_code" src="data:image/png;base64,{{ qr_code }}" alt="qr_code">
             </div>
+            <span class="text-danger" *ngIf="msg_erro">{{ msg_erro }}</span>
         </form>
+
     </div>
 </div>
+</div>
+
 
